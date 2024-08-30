@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>{{ title }}</title>
     </head>
     <body>
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
         <h1>My First Heading {{ counts.view }}</h1>
         <p>My first paragraph.</p>
+        <img src="{{ url_for('static', filename=cover) }}" alt="cover"/>
+        <audio id="stream" src="{{ url_for('static', filename=stream) }}"/>
     </body>
 </html>
