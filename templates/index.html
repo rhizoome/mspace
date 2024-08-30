@@ -18,7 +18,10 @@
         ></audio>
         <ul>
         {% for download in downloads %}
-            <li>{{ download[0] }}</li>
+            <li><a
+                href="{{ url_for('static', filename=download[1]) }}"
+                download="{{ download[2] }}"
+            >{{ download[0] }}</a></li>
         {% endfor %}
         </ul>
     </body>

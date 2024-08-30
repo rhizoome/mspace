@@ -39,9 +39,9 @@ update_view_count = partial(update_count, "view")
 update_play_count = partial(update_count, "play")
 
 
-def download_files(track_id):
+def download_files(track_id, download):
     for key, value in downloads.items():
-        yield (key, f"{track_id}-download.{value}")
+        yield (key, f"{track_id}-download.{value}", f"{download}.{value}")
 
 
 @app.route("/<track_id>/play")
@@ -57,7 +57,7 @@ async def index(track_id):
     entry = await update_db(track_id, update_view_count)
     entry["cover"] = f"{track_id}-cover.jpg"
     entry["stream"] = f"{track_id}-stream.mp3"
-    entry["downloads"] = download_files(track_id)
+    entry["downloads"] = download_files(track_id, entry["title"])
     return await render_template("index.html", **entry)
 
 
