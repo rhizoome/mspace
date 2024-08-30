@@ -4,7 +4,7 @@
         <title>{{ title }}</title>
         <meta name="title" content="{{ title }}">
         <meta name="description" content="street music">
-        <meta property="og:image" content="{{ url_for('static', filename=cover, _external=True) }}">
+        <meta property="og:image" content="{{ url_for('static', filename=cover) }}">
         <script src="{{ url_for('static', filename='script.js') }}"></script>
         <style>
             #background1 {
@@ -16,6 +16,7 @@
         </style>
         <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
         <link rel="apple-touch-icon" href="{{ url_for('static', filename=icon) }}"/>
+        <link rel="shortcut icon" href="{{ url_for('static', filename=icon) }}"/>
     </head>
     <body onload="page_load();">
         <div id="panel">

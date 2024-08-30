@@ -108,21 +108,19 @@ Lets start with Phase 1:
    - [x] Dockerfile
    - [ ] Update features/TODO according to problems encountered
      - [x] View only route (no count updates)
-     - [ ] Reset play/stop when playback has finished
      - [x] Some basic error handling
-     - [ ] Ask someone for review (low hanging fruit only)
      - [ ] Display soundcloud comments only if needed
-     - [ ] Configure access.log to file for statistics??
-     - [ ] Translate downloads into cover
-     - [ ] Move control down with 75vmin
-     - [ ] Remove unneeded z-indexs
-     - [ ] Stream doesn't need absolute anymore right?
-     - [ ] Favicon
-     - [ ] Touch icon
-     - [ ] Messenger preview
-     - [ ] Access log
-     - [ ] Docker access log anaylizer
-     - [ ] Docker-compose map database to outside
+     - [x] Configure access.log to file for statistics??
+     - [x] Translate downloads into cover
+     - [x] Move control down with 75vmin
+     - [x] Remove unneeded z-indexs
+     - [x] Stream doesn't need absolute anymore right?
+     - [x] Favicon
+     - [x] Touch icon
+     - [x] Messenger preview
+     - [x] Access log
+     - [x] Docker access log anaylizer
+     - [x] Docker-compose map database to outside
      - [ ] resonate.is
 - [ ] QR Code
    - [ ] Design sticker
