@@ -1,4 +1,5 @@
 import asyncio
+from functools import partial
 
 import aiofiles
 import toml
@@ -15,7 +16,7 @@ async def update_db(track_id, action):
         async with aiofiles.open(db_file, mode="r", encoding="UTF-8") as f:
             data = await f.read()
         entry = toml.loads(data)
-        assert entry["id"] == track_id
+        assert entry["track_id"] == track_id
         action(entry)
         data = toml.dumps(entry)
         async with aiofiles.open(db_file, mode="w", encoding="UTF-8") as f:
@@ -23,8 +24,19 @@ async def update_db(track_id, action):
     return entry
 
 
-def update_view_count(entry):
-    entry["counts"]["view"] += 1
+def update_count(field, entry):
+    entry["counts"][field] += 1
+
+
+update_view_count = partial(update_count, "view")
+update_play_count = partial(update_count, "play")
+
+
+@app.route("/<track_id>/play")
+async def play(track_id):
+    track_id = track_id.lower()
+    await update_db(track_id, update_play_count)
+    return "counted"
 
 
 @app.route("/<track_id>")
