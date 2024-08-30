@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>{{ title }}</title>
     </head>
@@ -15,6 +15,11 @@
             id="stream"
             src="{{ url_for('static', filename=stream) }}"
             onplay="report_play('{{ url_for('play', track_id=track_id) }}')"
-        />
+        ></audio>
+        <ul>
+        {% for download in downloads %}
+            <li>{{ download[0] }}</li>
+        {% endfor %}
+        </ul>
     </body>
 </html>

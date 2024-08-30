@@ -9,6 +9,13 @@ app = Quart(__name__)
 
 lock = asyncio.Lock()
 
+downloads = {
+    "flac": "flac",
+    "apple lossless": "m4a",
+    "opus": "opus",
+    "mp3": "mp3",
+}
+
 
 async def update_db(track_id, action):
     db_file = f"database/{track_id}.toml"
@@ -32,6 +39,11 @@ update_view_count = partial(update_count, "view")
 update_play_count = partial(update_count, "play")
 
 
+def download_files(track_id):
+    for key, value in downloads.items():
+        yield (key, f"{track_id}-download.{value}")
+
+
 @app.route("/<track_id>/play")
 async def play(track_id):
     track_id = track_id.lower()
@@ -45,6 +57,7 @@ async def index(track_id):
     entry = await update_db(track_id, update_view_count)
     entry["cover"] = f"{track_id}-cover.jpg"
     entry["stream"] = f"{track_id}-stream.mp3"
+    entry["downloads"] = download_files(track_id)
     return await render_template("index.html", **entry)
 
 
