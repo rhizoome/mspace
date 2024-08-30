@@ -122,7 +122,11 @@ Lets start with Phase 1:
      - [x] Docker access log anaylizer
      - [x] Docker-compose map database to outside
      - [ ] resonate.is
+     - [ ] Stream aac [^2]
 - [ ] QR Code
    - [ ] Design sticker
    - [ ] Write script to generate sticker
    - [ ] Print it, test it, deploy it
+
+[^2]: ffmpeg -i aaaa-aaaa-aaaa-download.flac -movflags +faststart
+aaaa-aaaa-aaaa-stream.m4a
