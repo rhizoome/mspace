@@ -3,7 +3,7 @@ from functools import partial
 
 import aiofiles
 import toml
-from quart import Quart, render_template, websocket
+from quart import Quart, abort, render_template, websocket
 
 app = Quart(__name__)
 
@@ -20,8 +20,11 @@ downloads = {
 async def update_db(track_id, action):
     db_file = f"database/{track_id}.toml"
     async with lock:
-        async with aiofiles.open(db_file, mode="r", encoding="UTF-8") as f:
-            data = await f.read()
+        try:
+            async with aiofiles.open(db_file, mode="r", encoding="UTF-8") as f:
+                data = await f.read()
+        except FileNotFoundError:
+            abort(404)
         entry = toml.loads(data)
         assert entry["track_id"] == track_id
         action(entry)
