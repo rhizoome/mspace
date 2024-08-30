@@ -36,7 +36,7 @@
 
 #dls {
     line-height: 0;
-    float: left;
+    float: right;
 }
 
 #panel {
@@ -92,7 +92,7 @@ ul.downloads {
 .downloads li {
     background-color: #333333;
     display: inline;
-    float: right;
+    float: left;
 }
 
 .downloads a {

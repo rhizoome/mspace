@@ -46,10 +46,10 @@ update_download_count = partial(update_count, "download")
 def download_files(entry):
     track_id = entry["track_id"]
     title = entry["title"]
-    yield ("soundcloud", entry["soundcloud"], None)
-    yield ("bandcamp", entry["bandcamp"], None)
     for key, value in downloads.items():
         yield (key, f"{track_id}-download.{value}", f"{title}.{value}")
+    yield ("soundcloud", entry["soundcloud"], None)
+    yield ("bandcamp", entry["bandcamp"], None)
 
 
 async def page(track_id, count=False):
