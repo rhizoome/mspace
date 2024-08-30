@@ -23,14 +23,19 @@
 }
 
 #views {
-    float: right;
+    float: left;
+    line-height: 0;
+    margin-bottom: 0;
 }
 
 #plays {
-    float: left;
+    float: right;
+    line-height: 0;
+    margin-bottom: 1.2vmin;
 }
 
 #dls {
+    line-height: 0;
     float: left;
 }
 
@@ -56,15 +61,21 @@
 #stream-div {
     position: absolute;
     z-index: 100;
-    top: 86%;
+    top: 0%;
     left: 100%;
-    -webkit-transform: translate(-110%,0);
-    transform: translate(-110%, 0);
+    -webkit-transform: translate(-100%,0);
+    transform: translate(-100%, 0);
 }
 
 #stream {
     width: 30vmin;
-    height: 6vmin;
+    height: 4vmin;
+}
+
+#title {
+    background-color: green;
+    line-height: 0;
+    margin-bottom: 2vmin;
 }
 
 .clear {
