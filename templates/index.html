@@ -20,7 +20,7 @@
         <h1 class="clear">{{ title }}</h1>
         <div onclick="play();">
             <img id="cover" src="{{ url_for('static', filename=cover) }}" alt="cover"/>
-            <div id="stream-div">
+            <div id="stream-div" onclick"no_click_through();">
                 <audio
                     controls
                     id="stream"

@@ -8,6 +8,11 @@ function play(evnt) {
     }
 }
 
+function no_click_through(event) {
+    alert("done");
+    event.stopPropagation();
+}
+
 report_play_done = false;
 function report_play(url) {
     if(report_play_done) return;
