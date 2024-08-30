@@ -18,12 +18,6 @@
         <a href="#" onclick="play();">
             <img id="cover" src="{{ url_for('static', filename=cover) }}" alt="cover"/>
         </a>
-        <audio
-            controls
-            id="stream"
-            src="{{ url_for('static', filename=stream) }}"
-            onplay="report_play('{{ url_for('play', track_id=track_id) }}');"
-        ></audio>
         <ul class="downloads">
         {% for download in downloads %}
             <li><a
@@ -33,7 +27,12 @@
             >{{ download[0] }}</a></li>
         {% endfor %}
         </ul>
-        <p id="download">{{ counts.download }} downloads</p>
+        <audio
+            id="stream"
+            src="{{ url_for('static', filename=stream) }}"
+            onplay="report_play('{{ url_for('play', track_id=track_id) }}');"
+        ></audio>
+        <p id="dls">{{ counts.download }} downloads</p>
         </div>
         <div id="background"></div>
     </body>
