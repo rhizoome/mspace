@@ -12,7 +12,7 @@
         </style>
         <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     </head>
-    <body>
+    <body onload="page_load();">
         <script src="{{ url_for('static', filename='script.js') }}"></script>
         <div id="panel">
         <h1 id="title">{{ title }}</h1>
