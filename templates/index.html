@@ -14,6 +14,14 @@
     </head>
     <body>
         <script src="{{ url_for('static', filename='script.js') }}"></script>
+        <div id="stream-div">
+            <audio
+                controls
+                id="stream"
+                src="{{ url_for('static', filename=stream) }}"
+                onplay="report_play('{{ url_for('play', track_id=track_id) }}');"
+            ></audio>
+        </div>
         <div id="panel">
         <p id="plays">{{ counts.play }} plays</p>
         <p id="views">{{ counts.view }} views</p>
@@ -36,11 +44,6 @@
             >{{ download[0] }}</a></li>
         {% endfor %}
         </ul>
-        <audio
-            id="stream"
-            src="{{ url_for('static', filename=stream) }}"
-            onplay="report_play('{{ url_for('play', track_id=track_id) }}');"
-        ></audio>
         <p id="dls">{{ counts.download }} downloads</p>
         </div>
         <div id="background1"></div>
