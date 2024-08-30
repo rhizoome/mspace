@@ -34,21 +34,9 @@ function is_ios() {
     || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
 }
 
-function is_touch_enabled() {
-    return ( 'ontouchstart' in window ) ||
-           ( navigator.maxTouchPoints > 0 ) ||
-           ( navigator.msMaxTouchPoints > 0 );
-}
-
 function page_load() {
-    var stream = document.getElementById("stream");
     if (is_ios()) {
         var stream_div = document.getElementById("stream-div");
-        stream_div.top = "-4%";
-        stream.style.width = "30vmin";
-    } else if (is_touch_enabled()) {
-        stream.style.width = "60vmin";
-    } else {
-        stream.style.width = "45vmin";
+        stream_div.style.top = "-7%";
     }
 }

@@ -113,6 +113,16 @@ Lets start with Phase 1:
      - [ ] Ask someone for review (low hanging fruit only)
      - [ ] Display soundcloud comments only if needed
      - [ ] Configure access.log to file for statistics??
+     - [ ] Translate downloads into cover
+     - [ ] Move control down with 75vmin
+     - [ ] Remove unneeded z-indexs
+     - [ ] Stream doesn't need abosulte anymore right?
+     - [ ] Favicon
+     - [ ] Touch icon
+     - [ ] Messenger preview
+     - [ ] Access log
+     - [ ] Docker access log anaylizer
+     - [ ] Docker-compose map database to outside
 - [ ] QR Code
    - [ ] Design sticker
    - [ ] Write script to generate sticker
