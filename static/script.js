@@ -1,18 +1,3 @@
-function play(evnt) {
-    event.stopPropagation();
-    var stream = document.getElementById("stream");
-    if (stream.paused || stream.currentTime == 0) {
-        stream.play();
-    } else {
-        stream.pause();
-    }
-}
-
-function no_click_through(event) {
-    alert("done");
-    event.stopPropagation();
-}
-
 report_play_done = false;
 function report_play(url) {
     if(report_play_done) return;

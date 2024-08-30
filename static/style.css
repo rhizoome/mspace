@@ -62,6 +62,10 @@
     z-index: 100;
 }
 
+#stream {
+    transform: scale(2.2);
+}
+
 .clear {
     clear: both;
 }
