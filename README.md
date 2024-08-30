@@ -94,19 +94,25 @@ TODO
 
 Lets start with Phase 1:
 
-- [x Host the site somewhere
+- [x] Host the site somewhere
 - [x] Create poetry project
 - [x] Add basic dependnecies
 - [x] Design toml-file
 - [x] Read toml
 - [x] Display track (no CSS yet)
-- [ ] Create config.toml (configure path to statics)
+- [ ] Create config.toml??
 - [x] Create a demo track
 - [x] Create a CSS
-- [ ] Adjust blur-background color/brightness via toml
-- [ ] Early deploy
-   - [ ] Dockerfile
+- [ ] Adjust blur-background color/brightness via toml??
+- [x] Early deploy
+   - [x] Dockerfile
    - [ ] Update features/TODO according to problems encountered
+     - [ ] View only route (no count updates)
+     - [ ] Reset play/stop when playback has finished
+     - [ ] Some basic error handling
+     - [ ] Ask someone for review (low hanging fruit only)
+     - [ ] Display soundcloud comments only if needed
+     - [ ] Configure access.log to file for statistics??
 - [ ] QR Code
    - [ ] Design sticker
    - [ ] Write script to generate sticker
