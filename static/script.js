@@ -13,8 +13,11 @@ function report_download(url) {
     oReq.send();
 }
 
-function play(evnt) {
-    if(report_play_done) return;
+function play() {
     var stream = document.getElementById("stream");
-    stream.play();
+    if (stream.paused || stream.currentTime == 0) {
+        stream.play();
+    } else {
+        stream.pause();
+    }
 }
