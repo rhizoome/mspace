@@ -18,7 +18,7 @@
         <p id="plays">{{ counts.play }} plays</p>
         <p id="views">{{ counts.view }} views</p>
         <h1 class="clear">{{ title }}</h1>
-        <div>
+        <div onclick="play();">
             <img id="cover" src="{{ url_for('static', filename=cover) }}" alt="cover"/>
             <div id="stream-div">
                 <audio

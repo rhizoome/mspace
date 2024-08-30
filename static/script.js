@@ -12,3 +12,9 @@ function report_download(url) {
     oReq.open("GET", url);
     oReq.send();
 }
+
+function play(evnt) {
+    if(report_play_done) return;
+    var stream = document.getElementById("stream");
+    stream.play();
+}
