@@ -107,9 +107,9 @@ Lets start with Phase 1:
 - [x] Early deploy
    - [x] Dockerfile
    - [ ] Update features/TODO according to problems encountered
-     - [ ] View only route (no count updates)
+     - [x] View only route (no count updates)
      - [ ] Reset play/stop when playback has finished
-     - [ ] Some basic error handling
+     - [x] Some basic error handling
      - [ ] Ask someone for review (low hanging fruit only)
      - [ ] Display soundcloud comments only if needed
      - [ ] Configure access.log to file for statistics??
