@@ -22,46 +22,40 @@
     filter: blur(100px);
 }
 
-#views {
-    float: left;
-    line-height: 0;
-    margin-bottom: 1.2vmin;
-}
-
-#plays {
-    float: right;
-    line-height: 0;
-    margin-bottom: 1.2vmin;
-}
-
 #panel {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-
+    margin-left: auto;
+    margin-right: auto;
+    width: 75vmin;
     font-family: sans-serif;
     font-size: 2vmin;
     color: white;
     text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
 }
 
-#cover {
-    display: block;
-    width: 75vmin;
-    height: 75vmin;
+#views {
+    float: left;
+    line-height: 0;
+    margin-bottom: 0.5em;
 }
 
-#stream {
-    margin-top: 1vmin;
-    width: 75vmin;
+#plays {
+    float: right;
+    line-height: 0;
+    margin-bottom: 0.5em;
 }
 
 #title {
-    background-color: green;
-    line-height: 0;
-    margin-bottom: 2vmin;
+    margin-bottom: 0;
+}
+
+#cover {
+    display: block;
+    width: 100%;
+}
+
+#stream {
+    margin-top: 0.5em;
+    width: 100%;
 }
 
 .clear {
@@ -85,18 +79,10 @@ ul.downloads {
     float: left;
 }
 
-.downloads a {
+.downloads div,a {
     display: block;
     color: white;
-    padding: 1vmin 1.2vmin;
-    border-right: 1px solid #bbb;
-    text-decoration: none;
-    font-size: 149%;
-}
-.downloads div {
-    display: block;
-    color: white;
-    padding: 1vmin 1.2vmin;
+    padding: 0.3em 0.4em;
     border-right: 1px solid #bbb;
     text-decoration: none;
     font-size: 149%;
