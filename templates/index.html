@@ -26,8 +26,12 @@
         <ul class="downloads">
         {% for download in downloads %}
             <li><a
+                {% if download[2] %}
                 href="{{ url_for('static', filename=download[1]) }}"
                 download="{{ download[2] }}"
+                {% else %}
+                href="{{ download[1] }}"
+                {% endif %}
                 onclick="report_download('{{ url_for('download', track_id=track_id) }}');"
             >{{ download[0] }}</a></li>
         {% endfor %}

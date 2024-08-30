@@ -10,10 +10,10 @@ app = Quart(__name__)
 lock = asyncio.Lock()
 
 downloads = {
-    "flac": "flac",
-    "apple lossless": "m4a",
-    "opus": "opus",
     "mp3": "mp3",
+    "opus": "opus",
+    "flac": "flac",
+    "alac": "m4a",
 }
 
 
@@ -40,9 +40,12 @@ update_play_count = partial(update_count, "play")
 update_download_count = partial(update_count, "download")
 
 
-def download_files(track_id, download):
+def download_files(entry):
+    track_id = entry["track_id"]
+    title = entry["title"]
     for key, value in downloads.items():
-        yield (key, f"{track_id}-download.{value}", f"{download}.{value}")
+        yield (key, f"{track_id}-download.{value}", f"{title}.{value}")
+    yield ("soundcloud", entry["soundcloud"], None)
 
 
 @app.route("/<track_id>/play")
@@ -65,7 +68,7 @@ async def index(track_id):
     entry = await update_db(track_id, update_view_count)
     entry["cover"] = f"{track_id}-cover.jpg"
     entry["stream"] = f"{track_id}-stream.mp3"
-    entry["downloads"] = download_files(track_id, entry["title"])
+    entry["downloads"] = download_files(entry)
     return await render_template("index.html", **entry)
 
 

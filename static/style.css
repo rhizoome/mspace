@@ -88,4 +88,5 @@ ul.downloads {
     padding: 1vmin 2vmin;
     border-right: 1px solid #bbb;
     text-decoration: none;
+    font-size: 160%;
 }
