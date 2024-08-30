@@ -49,6 +49,7 @@ def download_files(entry):
     for key, value in downloads.items():
         yield (key, f"{track_id}-download.{value}", f"{title}.{value}")
     yield ("soundcloud", entry["soundcloud"], None)
+    yield ("bandcamp", entry["bandcamp"], None)
 
 
 async def page(track_id, count=False):

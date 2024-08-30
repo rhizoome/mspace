@@ -98,8 +98,8 @@ ul.downloads {
 .downloads a {
     display: block;
     color: white;
-    padding: 1vmin 2vmin;
+    padding: 1vmin 1.2vmin;
     border-right: 1px solid #bbb;
     text-decoration: none;
-    font-size: 160%;
+    font-size: 149%;
 }
