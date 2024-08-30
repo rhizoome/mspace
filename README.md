@@ -94,15 +94,16 @@ TODO
 
 Lets start with Phase 1:
 
-- [x] Host the site somewhere
-- [ ] Create poetry project
-- [ ] Add basic dependnecies
-- [ ] Design toml-file
-- [ ] Read toml
-- [ ] Display track (no CSS yet)
+- [x Host the site somewhere
+- [x] Create poetry project
+- [x] Add basic dependnecies
+- [x] Design toml-file
+- [x] Read toml
+- [x] Display track (no CSS yet)
 - [ ] Create config.toml (configure path to statics)
-- [ ] Create a demo track
-- [ ] Create a CSS
+- [x] Create a demo track
+- [x] Create a CSS
+- [ ] Adjust blur-background color/brightness via toml
 - [ ] Early deploy
    - [ ] Dockerfile
    - [ ] Update features/TODO according to problems encountered
