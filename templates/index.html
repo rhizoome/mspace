@@ -2,13 +2,21 @@
 <html lang="en">
     <head>
         <title>{{ title }}</title>
+        <style>
+            #background {
+                background-image: url("{{ url_for('static', filename=cover) }}");
+            }
+        </style>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     </head>
     <body>
+        <div id="panel">
         <script src="{{ url_for('static', filename='script.js') }}"></script>
-        <h1>{{ title }}</h1>
-        <p id="views">{{ counts.view }}</p>
+        <p id="plays">{{ counts.play }} plays</p>
+        <p id="views">{{ counts.view }} views</p>
+        <h1 class="clear">{{ title }}</h1>
         <a href="#" onclick="play();">
-            <img src="{{ url_for('static', filename=cover) }}" alt="cover"/>
+            <img id="cover" src="{{ url_for('static', filename=cover) }}" alt="cover"/>
         </a>
         <audio
             controls
@@ -16,8 +24,7 @@
             src="{{ url_for('static', filename=stream) }}"
             onplay="report_play('{{ url_for('play', track_id=track_id) }}');"
         ></audio>
-        <p id="plays">{{ counts.play }}</p>
-        <ul>
+        <ul class="downloads">
         {% for download in downloads %}
             <li><a
                 href="{{ url_for('static', filename=download[1]) }}"
@@ -26,6 +33,8 @@
             >{{ download[0] }}</a></li>
         {% endfor %}
         </ul>
-        <p id="download">{{ counts.download }}</p>
+        <p id="download">{{ counts.download }} downloads</p>
+        </div>
+        <div id="background"></div>
     </body>
 </html>

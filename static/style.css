@@ -1,0 +1,63 @@
+#background {
+    background-size: 100% 100%;
+    z-index: -1;
+    overflow: hidden;
+    position: fixed;
+    top: -10%;
+    left: -10%;
+    width: 120%;
+    height: 120%;
+    filter: blur(100px);
+}
+
+#views {
+    float: right;
+}
+
+#plays {
+    float: left;
+}
+
+#panel {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+    font-family: sans-serif;
+    font-size: 20px;
+    color: white;
+    text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+}
+
+#cover {
+    display: block;
+    width: 60vmin;
+    height: 60vmin;
+}
+
+.clear {
+    clear: both;
+}
+
+ul.downloads {
+    display: inline;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+}
+
+.downloads li {
+    background-color: #555555;
+    display: inline;
+    float: left;
+    padding: 10pt 16pt;
+    border-right: 1px solid #bbb;
+}
+
+.downloads a {
+    color: white;
+    text-decoration: none;
+}
