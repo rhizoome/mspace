@@ -56,11 +56,10 @@
 #stream-div {
     position: absolute;
     z-index: 100;
-    left: 2%;
-    top: 99%;
-    -webkit-transform: translate(0, -200%);
-    transform: translate(0, -200%);
-    min-height: 6vmin;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
 }
 
 .clear {
