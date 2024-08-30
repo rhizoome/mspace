@@ -19,7 +19,7 @@
         <link rel="shortcut icon" href="{{ url_for('static', filename=icon) }}"/>
     </head>
     <body onload="page_load();">
-        <div id="panel"><div id="container">
+        <div id="panel">
         <h1 id="title">{{ title }}</h1>
         <p id="plays">{{ counts.play }} plays</p>
         <p id="views">{{ counts.view }} views</p>
@@ -46,7 +46,7 @@
             src="{{ url_for('static', filename=stream) }}"
             onplay="report_play('{{ url_for('play', track_id=track_id) }}');"
         ></audio>
-        </div></div>
+        </div>
         <div id="background1"></div>
         <div id="background2"></div>
         <noscript>
