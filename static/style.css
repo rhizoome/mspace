@@ -31,7 +31,7 @@
 }
 
 #dls {
-    float: right;
+    float: left;
 }
 
 #panel {
@@ -55,11 +55,11 @@
 
 #stream-div {
     position: absolute;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
     z-index: 100;
+    left: 2%;
+    top: 99%;
+    -webkit-transform: translate(0, -200%);
+    transform: translate(0, -200%);
 }
 
 .clear {
@@ -76,7 +76,7 @@ ul.downloads {
 .downloads li {
     background-color: #333333;
     display: inline;
-    float: left;
+    float: right;
 }
 
 .downloads a {
