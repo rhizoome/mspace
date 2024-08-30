@@ -73,7 +73,7 @@ ul.downloads {
 .downloads a {
     display: block;
     color: white;
-    padding: 10pt 16pt;
+    padding: 1vmin 2vmin;
     border-right: 1px solid #bbb;
     text-decoration: none;
 }
