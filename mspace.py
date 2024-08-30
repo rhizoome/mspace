@@ -58,9 +58,10 @@ async def page(track_id, count=False):
         entry = await update_db(track_id, update_view_count)
     else:
         entry = await update_db(track_id, lambda x: None)
+    entry["count"] = count
     entry["cover"] = f"{track_id}-cover.jpg"
     entry["icon"] = f"{track_id}-icon.png"
-    entry["stream"] = f"{track_id}-stream.mp3"
+    entry["stream"] = f"{track_id}-stream.m4a"
     entry["downloads"] = download_files(entry)
     return await render_template("index.html", **entry)
 

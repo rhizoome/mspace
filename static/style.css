@@ -63,11 +63,6 @@
 }
 
 ul.downloads {
-    position: absolute;
-    -webkit-transform: translate(0, -100%);
-    transform: translate(0, -100%);
-    z-index: 100;
-
     list-style-type: none;
     margin: 0;
     padding: 0;

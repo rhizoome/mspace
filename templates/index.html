@@ -42,6 +42,7 @@
         </div>
         <audio
             controls
+            preload
             id="stream"
             src="{{ url_for('static', filename=stream) }}"
             onplay="report_play('{{ url_for('play', track_id=track_id) }}');"
@@ -49,9 +50,11 @@
         </div>
         <div id="background1"></div>
         <div id="background2"></div>
+        {% if count %}
         <noscript>
             <img src="https://shn.1042.ch/ingress/7b08c29b-acc1-4e09-9df4-ad2da0c9fd04/pixel.gif">
         </noscript>
         <script defer src="https://shn.1042.ch/ingress/7b08c29b-acc1-4e09-9df4-ad2da0c9fd04/script.js"></script>
+        {% endif %}
     </body>
 </html>
