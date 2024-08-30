@@ -18,17 +18,17 @@
         <p id="plays">{{ counts.play }} plays</p>
         <p id="views">{{ counts.view }} views</p>
         <h1 class="clear">{{ title }}</h1>
-        <a href="#" onclick="play();">
+        <div onclick="play();">
             <img id="cover" src="{{ url_for('static', filename=cover) }}" alt="cover"/>
-        <div id="stream-div">
-            <audio
-                controls
-                id="stream"
-                src="{{ url_for('static', filename=stream) }}"
-                onplay="report_play('{{ url_for('play', track_id=track_id) }}');"
-            ></audio>
+            <div id="stream-div">
+                <audio
+                    controls
+                    id="stream"
+                    src="{{ url_for('static', filename=stream) }}"
+                    onplay="report_play('{{ url_for('play', track_id=track_id) }}');"
+                ></audio>
+            </div>
         </div>
-        </a>
         <ul class="downloads">
         {% for download in downloads %}
             <li><a
