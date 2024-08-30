@@ -13,13 +13,15 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     </head>
     <body>
-        <div id="panel">
         <script src="{{ url_for('static', filename='script.js') }}"></script>
+        <div id="panel">
         <p id="plays">{{ counts.play }} plays</p>
         <p id="views">{{ counts.view }} views</p>
         <h1 class="clear">{{ title }}</h1>
         <a href="#" onclick="play();">
             <img id="cover" src="{{ url_for('static', filename=cover) }}" alt="cover"/>
+            <img id="btn_stop" class="button" src="{{ url_for('static', filename="stop.png") }}" alt="stop"/>
+            <img id="btn_play" class="button" src="{{ url_for('static', filename="play.png") }}" alt="play"/>
         </a>
         <ul class="downloads">
         {% for download in downloads %}

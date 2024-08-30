@@ -53,6 +53,18 @@
     height: 75vmin;
 }
 
+.button {
+    position: absolute;
+    left: 75%;
+    top: 74%;
+    width: 15vmin;
+    height: 15vmin;
+}
+
+#btn_play {
+    z-index: 100;
+}
+
 .clear {
     clear: both;
 }
