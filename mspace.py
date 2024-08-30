@@ -53,7 +53,7 @@ def download_files(entry):
 
 
 async def page(track_id, count=False):
-    track_id = track_id.lower()
+    track_id = track_id.upper()
     if count:
         entry = await update_db(track_id, update_view_count)
     else:
@@ -68,14 +68,14 @@ async def page(track_id, count=False):
 
 @app.route("/<track_id>/play")
 async def play(track_id):
-    track_id = track_id.lower()
+    track_id = track_id.upper()
     await update_db(track_id, update_play_count)
     return "counted"
 
 
 @app.route("/<track_id>/download")
 async def download(track_id):
-    track_id = track_id.lower()
+    track_id = track_id.upper()
     await update_db(track_id, update_download_count)
     return "counted"
 
@@ -100,7 +100,8 @@ def make_id():
             random.shuffle(letters)
             res.append(letters[0])
         res.append("-")
-    print("".join(res[:-1]))
+    res = "".join(res[:-1])
+    print(res.upper())
 
 
 if __name__ == "__main__":
