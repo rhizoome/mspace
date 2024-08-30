@@ -20,31 +20,33 @@
         <p id="views">{{ counts.view }} views</p>
         <div>
             <img onclick="play();" id="cover" src="{{ url_for('static', filename=cover) }}" alt="cover"/>
-            <div id="stream-div">
-                <audio
-                    controls
-                    id="stream"
-                    src="{{ url_for('static', filename=stream) }}"
-                    onplay="report_play('{{ url_for('play', track_id=track_id) }}');"
-                ></audio>
-            </div>
+            <ul class="downloads">
+            {% for download in downloads %}
+                <li><a
+                    {% if download[2] %}
+                    href="{{ url_for('static', filename=download[1]) }}"
+                    download="{{ download[2] }}"
+                    {% else %}
+                    href="{{ download[1] }}"
+                    {% endif %}
+                    onclick="report_download('{{ url_for('download', track_id=track_id) }}');"
+                >{{ download[0] }}</a></li>
+            {% endfor %}
+                <li><div>{{ counts.download }}</div></li>
+            </ul>
         </div>
-        <ul class="downloads">
-        {% for download in downloads %}
-            <li><a
-                {% if download[2] %}
-                href="{{ url_for('static', filename=download[1]) }}"
-                download="{{ download[2] }}"
-                {% else %}
-                href="{{ download[1] }}"
-                {% endif %}
-                onclick="report_download('{{ url_for('download', track_id=track_id) }}');"
-            >{{ download[0] }}</a></li>
-        {% endfor %}
-        </ul>
-        <p id="dls">{{ counts.download }} dls</p>
+        <audio
+            controls
+            id="stream"
+            src="{{ url_for('static', filename=stream) }}"
+            onplay="report_play('{{ url_for('play', track_id=track_id) }}');"
+        ></audio>
         </div>
         <div id="background1"></div>
         <div id="background2"></div>
+        <noscript>
+            <img src="https://shn.1042.ch/ingress/7b08c29b-acc1-4e09-9df4-ad2da0c9fd04/pixel.gif">
+        </noscript>
+        <script defer src="https://shn.1042.ch/ingress/7b08c29b-acc1-4e09-9df4-ad2da0c9fd04/script.js"></script>
     </body>
 </html>

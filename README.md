@@ -116,13 +116,14 @@ Lets start with Phase 1:
      - [ ] Translate downloads into cover
      - [ ] Move control down with 75vmin
      - [ ] Remove unneeded z-indexs
-     - [ ] Stream doesn't need abosulte anymore right?
+     - [ ] Stream doesn't need absolute anymore right?
      - [ ] Favicon
      - [ ] Touch icon
      - [ ] Messenger preview
      - [ ] Access log
      - [ ] Docker access log anaylizer
      - [ ] Docker-compose map database to outside
+     - [ ] resonate.is
 - [ ] QR Code
    - [ ] Design sticker
    - [ ] Write script to generate sticker
