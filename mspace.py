@@ -11,9 +11,9 @@ lock = asyncio.Lock()
 
 downloads = {
     "mp3": "mp3",
-    "opus": "opus",
     "flac": "flac",
     "alac": "m4a",
+    "wav": "wav",
 }
 
 
