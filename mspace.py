@@ -37,6 +37,7 @@ def update_count(field, entry):
 
 update_view_count = partial(update_count, "view")
 update_play_count = partial(update_count, "play")
+update_download_count = partial(update_count, "download")
 
 
 def download_files(track_id, download):
@@ -48,6 +49,13 @@ def download_files(track_id, download):
 async def play(track_id):
     track_id = track_id.lower()
     await update_db(track_id, update_play_count)
+    return "counted"
+
+
+@app.route("/<track_id>/download")
+async def download(track_id):
+    track_id = track_id.lower()
+    await update_db(track_id, update_download_count)
     return "counted"
 
 

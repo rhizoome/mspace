@@ -5,24 +5,27 @@
     </head>
     <body>
         <script src="{{ url_for('static', filename='script.js') }}"></script>
-        <h1>My First Heading {{ counts.view }} {{ counts.play }}</h1>
-        <p>My first paragraph.</p>
-        <a href="javascript:play()">
+        <h1>{{ title }}</h1>
+        <p id="views">{{ counts.view }}</p>
+        <a href="#" onclick="play();">
             <img src="{{ url_for('static', filename=cover) }}" alt="cover"/>
         </a>
         <audio
             controls
             id="stream"
             src="{{ url_for('static', filename=stream) }}"
-            onplay="report_play('{{ url_for('play', track_id=track_id) }}')"
+            onplay="report_play('{{ url_for('play', track_id=track_id) }}');"
         ></audio>
+        <p id="plays">{{ counts.play }}</p>
         <ul>
         {% for download in downloads %}
             <li><a
                 href="{{ url_for('static', filename=download[1]) }}"
                 download="{{ download[2] }}"
+                onclick="report_download('{{ url_for('download', track_id=track_id) }}');"
             >{{ download[0] }}</a></li>
         {% endfor %}
         </ul>
+        <p id="download">{{ counts.download }}</p>
     </body>
 </html>
