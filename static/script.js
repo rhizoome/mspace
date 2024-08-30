@@ -1,13 +1,9 @@
 function play() {
     var stream = document.getElementById("stream");
-    var play = document.getElementById("btn_play");
-    var stop = document.getElementById("btn_stop");
     if (stream.paused || stream.currentTime == 0) {
         stream.play();
-        play.style.display = "none";
     } else {
         stream.pause();
-        play.style.display = "inline-block";
     }
 }
 

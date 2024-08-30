@@ -53,23 +53,13 @@
     height: 75vmin;
 }
 
-.button {
-    position: absolute;
-    left: 75%;
-    top: 74%;
-    width: 15vmin;
-    height: 15vmin;
-}
-
-#btn_play {
-    z-index: 100;
-}
-
 #stream-div {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     z-index: 100;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .clear {
