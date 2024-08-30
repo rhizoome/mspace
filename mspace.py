@@ -90,5 +90,18 @@ async def view(track_id):
     return await page(track_id, count=True)
 
 
+def make_id():
+    import random
+
+    letters = list("abcdefghijklmnpqrstuvwxyz123456789")
+    res = []
+    for _ in range(3):
+        for _ in range(4):
+            random.shuffle(letters)
+            res.append(letters[0])
+        res.append("-")
+    print("".join(res[:-1]))
+
+
 if __name__ == "__main__":
-    app.run()
+    make_id()
