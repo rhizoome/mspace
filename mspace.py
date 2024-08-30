@@ -48,6 +48,18 @@ def download_files(entry):
     yield ("soundcloud", entry["soundcloud"], None)
 
 
+async def page(track_id, count=False):
+    track_id = track_id.lower()
+    if count:
+        entry = await update_db(track_id, update_view_count)
+    else:
+        entry = await update_db(track_id, lambda x: None)
+    entry["cover"] = f"{track_id}-cover.jpg"
+    entry["stream"] = f"{track_id}-stream.mp3"
+    entry["downloads"] = download_files(entry)
+    return await render_template("index.html", **entry)
+
+
 @app.route("/<track_id>/play")
 async def play(track_id):
     track_id = track_id.lower()
@@ -62,14 +74,14 @@ async def download(track_id):
     return "counted"
 
 
-@app.route("/<track_id>")
+@app.route("/<track_id>/view")
 async def index(track_id):
-    track_id = track_id.lower()
-    entry = await update_db(track_id, update_view_count)
-    entry["cover"] = f"{track_id}-cover.jpg"
-    entry["stream"] = f"{track_id}-stream.mp3"
-    entry["downloads"] = download_files(entry)
-    return await render_template("index.html", **entry)
+    return await page(track_id, count=False)
+
+
+@app.route("/<track_id>")
+async def view(track_id):
+    return await page(track_id, count=True)
 
 
 if __name__ == "__main__":
