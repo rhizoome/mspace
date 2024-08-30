@@ -1,4 +1,5 @@
-function play() {
+function play(evnt) {
+    event.stopPropagation();
     var stream = document.getElementById("stream");
     if (stream.paused || stream.currentTime == 0) {
         stream.play();
