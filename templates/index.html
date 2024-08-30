@@ -18,8 +18,8 @@
         <h1 id="title">{{ title }}</h1>
         <p id="plays">{{ counts.play }} plays</p>
         <p id="views">{{ counts.view }} views</p>
-        <div onclick="play();">
-            <img id="cover" src="{{ url_for('static', filename=cover) }}" alt="cover"/>
+        <div>
+            <img onclick="play();" id="cover" src="{{ url_for('static', filename=cover) }}" alt="cover"/>
             <div id="stream-div">
                 <audio
                     controls
