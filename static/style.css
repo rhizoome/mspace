@@ -50,14 +50,15 @@ ul.downloads {
 }
 
 .downloads li {
-    background-color: #555555;
+    background-color: #333333;
     display: inline;
     float: left;
-    padding: 10pt 16pt;
-    border-right: 1px solid #bbb;
 }
 
 .downloads a {
+    display: block;
     color: white;
+    padding: 10pt 16pt;
+    border-right: 1px solid #bbb;
     text-decoration: none;
 }
