@@ -34,9 +34,15 @@ function is_ios() {
     || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
 }
 
+function is_touch_enabled() {
+    return ( 'ontouchstart' in window ) ||
+           ( navigator.maxTouchPoints > 0 ) ||
+           ( navigator.msMaxTouchPoints > 0 );
+}
+
 function page_load() {
-    if (is_ios()) {
-        var stream_div = document.getElementById("stream-div");
-        stream_div.style.top = "-7%";
+    if (is_touch_enabled()) {
+        var panel = document.getElementById("panel");
+        panel.style.paddingBottom = "12vmin";
     }
 }
