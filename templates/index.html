@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <title>{{ title }}</title>
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
         <style>
             #background1 {
                 background-image: url("{{ url_for('static', filename=cover) }}");
@@ -13,7 +14,6 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     </head>
     <body onload="page_load();">
-        <script src="{{ url_for('static', filename='script.js') }}"></script>
         <div id="panel">
         <h1 id="title">{{ title }}</h1>
         <p id="plays">{{ counts.play }} plays</p>

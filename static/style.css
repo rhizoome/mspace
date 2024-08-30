@@ -60,7 +60,7 @@
 
 #stream-div {
     position: absolute;
-    z-index: -3;
+    z-index: 100;
     top: -2%;
     left: 100%;
     -webkit-transform: translate(-100%,-100%);

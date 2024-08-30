@@ -43,6 +43,8 @@ function is_touch_enabled() {
 function page_load() {
     var stream = document.getElementById("stream");
     if (is_ios()) {
+        var stream_div = document.getElementById("stream-div");
+        stream_div.top = "-4%";
         stream.style.width = "30vmin";
     } else if (is_touch_enabled()) {
         stream.style.width = "60vmin";
