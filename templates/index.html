@@ -3,7 +3,10 @@
     <head>
         <title>{{ title }}</title>
         <style>
-            #background {
+            #background1 {
+                background-image: url("{{ url_for('static', filename=cover) }}");
+            }
+            #background2 {
                 background-image: url("{{ url_for('static', filename=cover) }}");
             }
         </style>
@@ -34,6 +37,7 @@
         ></audio>
         <p id="dls">{{ counts.download }} downloads</p>
         </div>
-        <div id="background"></div>
+        <div id="background1"></div>
+        <div id="background2"></div>
     </body>
 </html>
